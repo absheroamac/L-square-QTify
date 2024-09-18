@@ -1,8 +1,10 @@
 .button{
     font-size: 18px;
+    font-family: var(--primary-font);
     background-color: var(--color-secondary);
     color: var(--color-primary);
     padding: 10px 16px;
     border: 1px solid var(--color-primary);
     border-radius: 12px;
+    cursor: pointer;
 }

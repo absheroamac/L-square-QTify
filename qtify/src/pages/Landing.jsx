@@ -11,14 +11,15 @@ import Section from "../components/Section";
 
 function Landing() {
   const [newSongs, setNewSongs] = useState([]);
+  const [topSongs, setTopSongs] = useState([]);
 
-  const getSongs = async (link) => {
+  const getSongs = async (link, setSong) => {
     try {
       const res = await axios.get(
         "https://qtify-backend-labs.crio.do/albums/" + link
       );
       if (res.status === 200) {
-        setNewSongs(res.data);
+        setTopSongs(res.data);
         console.log(res.data);
       } else {
         console.log("https error");
@@ -29,14 +30,16 @@ function Landing() {
   };
 
   useEffect(() => {
-    getSongs("top");
+    getSongs("top", setTopSongs);
+    getSongs("new", setNewSongs);
   }, []);
 
   return (
     <div className={styles.landing}>
       <Navbar />
       <Hero />
-      <Section data={newSongs} title="Top Albums" />
+      <Section data={topSongs} title="Top Albums" />
+      <Section data={newSongs} title="New Albums" />
     </div>
   );
 }

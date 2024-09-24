@@ -22,13 +22,14 @@ function Section({ data, title }) {
         </Button>
       </Box>
       <Grid className={Styles.grid}>
-        {data.map((element) => {
-          return (
-            <Grid item md={2} key={element.id}>
-              <CardItem card={element} />
-            </Grid>
-          );
-        })}
+        {data.length > 0 &&
+          data.map((element) => {
+            return (
+              <Grid item md={2} key={element.id}>
+                <CardItem card={element} />
+              </Grid>
+            );
+          })}
       </Grid>
     </Box>
   );

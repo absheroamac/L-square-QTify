@@ -3,7 +3,7 @@ import { Box, Grid, padding } from "@mui/system";
 import CardItem from "./CardItem";
 import Styles from "./Section.module.css";
 
-function Section({ data }) {
+function Section({ data, title }) {
   return (
     <Box
       sx={{
@@ -14,7 +14,9 @@ function Section({ data }) {
       }}
     >
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography sx={{ color: "white", fontSize: "20px" }}>Title</Typography>
+        <Typography sx={{ color: "white", fontSize: "20px" }}>
+          {title}
+        </Typography>
         <Button sx={{ color: "#34C94B", textTransform: "none" }}>
           Collapse
         </Button>

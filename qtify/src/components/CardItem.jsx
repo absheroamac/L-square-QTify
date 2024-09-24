@@ -23,7 +23,7 @@ function CardItem({ card }) {
 
         <Chip
           sx={{ margin: "8px 8px", backgroundColor: "black", color: "white" }}
-          label={card.follows + "Follows"}
+          label={card.follows + " Follows"}
         />
       </Card>
 

@@ -34,8 +34,10 @@ function Carousel(data) {
 
       <Swiper
         modules={Navigation}
-        spaceBetween={40}
-        slidesPerView={7}
+        initialSlide={0}
+        slidesPerView={"auto"}
+        spaceBetween={"40"}
+        allowTouchMove
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
           setIsBeginning(swiper.isBeginning);

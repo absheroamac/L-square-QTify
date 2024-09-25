@@ -41,9 +41,9 @@ function Landing() {
     <div className={styles.landing}>
       <Navbar />
       <Hero />
-      <Section data={songs} title="Songs" type="songs" tabs={generes.data} />
       <Section data={topSongs} title="Top Albums" type="albums" />
       <Section data={newSongs} title="New Albums" type="albums" />
+      <Section data={songs} title="Songs" type="songs" tabs={generes.data} />
     </div>
   );
 }

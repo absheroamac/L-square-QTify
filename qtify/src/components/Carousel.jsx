@@ -34,7 +34,7 @@ function Carousel(data) {
 
       <Swiper
         modules={Navigation}
-        spaceBetween={32}
+        spaceBetween={40}
         slidesPerView={7}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;

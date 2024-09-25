@@ -2,8 +2,14 @@ import { Button, Typography } from "@mui/material";
 import { Box, Grid, padding } from "@mui/system";
 import CardItem from "./CardItem";
 import Styles from "./Section.module.css";
+import GridList from "./GridList";
+import { useState } from "react";
+import Carousel from "./Carousel";
 
 function Section({ data, title }) {
+  const [expand, setExpand] = useState(false);
+  console.log(data, title);
+
   return (
     <Box
       sx={{
@@ -17,20 +23,25 @@ function Section({ data, title }) {
         <Typography sx={{ color: "white", fontSize: "20px" }}>
           {title}
         </Typography>
-        <Button sx={{ color: "#34C94B", textTransform: "none" }}>
-          Collapse
-        </Button>
+
+        {expand ? (
+          <Button
+            sx={{ color: "#34C94B", textTransform: "none" }}
+            onClick={() => setExpand(false)}
+          >
+            Collapse
+          </Button>
+        ) : (
+          <Button
+            sx={{ color: "#34C94B", textTransform: "none" }}
+            onClick={() => setExpand(true)}
+          >
+            Show all
+          </Button>
+        )}
       </Box>
-      <Grid className={Styles.grid}>
-        {data.length > 0 &&
-          data.map((element) => {
-            return (
-              <Grid item md={2} key={element.id}>
-                <CardItem card={element} />
-              </Grid>
-            );
-          })}
-      </Grid>
+
+      {expand ? <GridList data={data} /> : <Carousel data={data} />}
     </Box>
   );
 }

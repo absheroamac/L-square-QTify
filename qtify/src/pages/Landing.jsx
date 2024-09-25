@@ -8,6 +8,7 @@ import CardItem from "../components/CardItem";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Section from "../components/Section";
+import Carousel from "../components/Carousel";
 
 function Landing() {
   const [newSongs, setNewSongs] = useState([]);
@@ -20,7 +21,7 @@ function Landing() {
       );
       if (res.status === 200) {
         setTopSongs(res.data);
-        console.log(res.data);
+        console.log(res.data, link);
       } else {
         console.log("https error");
       }

@@ -9,7 +9,7 @@ import React, { useRef, useState } from "react";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 
-function Carousel(data) {
+function Carousel(data, type) {
   const swiperRef = useRef();
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -35,7 +35,7 @@ function Carousel(data) {
       <Swiper
         modules={Navigation}
         initialSlide={0}
-        slidesPerView={"auto"}
+        slidesPerView={7}
         spaceBetween={"40"}
         allowTouchMove
         onSwiper={(swiper) => {
@@ -49,7 +49,7 @@ function Carousel(data) {
           data.data.map((element) => {
             return (
               <SwiperSlide key={element.id}>
-                <CardItem card={element} />
+                <CardItem card={element} type={type} />
               </SwiperSlide>
             );
           })}

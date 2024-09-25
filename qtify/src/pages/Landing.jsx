@@ -20,7 +20,7 @@ function Landing() {
         "https://qtify-backend-labs.crio.do/albums/" + link
       );
       if (res.status === 200) {
-        setTopSongs(res.data);
+        setSong(res.data);
         console.log(res.data, link);
       } else {
         console.log("https error");
